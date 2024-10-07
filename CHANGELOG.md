@@ -4,6 +4,41 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.11.0](https://github.com/mrcjkb/rustaceanvim/compare/v5.10.1...v5.11.0) (2024-10-01)
+
+
+### Features
+
+* **lsp:** preserve cursor position for move_item command ([#532](https://github.com/mrcjkb/rustaceanvim/issues/532)) ([a07bb0d](https://github.com/mrcjkb/rustaceanvim/commit/a07bb0d256d1f9693ae8fb96dbcc5350b18f2978))
+
+## [5.10.1](https://github.com/mrcjkb/rustaceanvim/compare/v5.10.0...v5.10.1) (2024-09-27)
+
+
+### Bug Fixes
+
+* **windows:** remove empty file causing git clone to fail ([b7c8171](https://github.com/mrcjkb/rustaceanvim/commit/b7c8171b1a496e20a2906bf74d1a260f802932d3))
+
+## [5.10.0](https://github.com/mrcjkb/rustaceanvim/compare/v5.9.0...v5.10.0) (2024-09-27)
+
+
+### Features
+
+* add hint on how to configure/disable server status notifications ([711e25f](https://github.com/mrcjkb/rustaceanvim/commit/711e25fe11b6e72fbeda52d9d81b85a5aa3a81ab))
+
+## [5.9.0](https://github.com/mrcjkb/rustaceanvim/compare/v5.8.1...v5.9.0) (2024-09-23)
+
+
+### Features
+
+* **lsp:** only notify on server status error by default ([#519](https://github.com/mrcjkb/rustaceanvim/issues/519)) ([360ac5c](https://github.com/mrcjkb/rustaceanvim/commit/360ac5c80f299f282cbb1967bbfe5aa1e1c6e66e))
+
+## [5.8.1](https://github.com/mrcjkb/rustaceanvim/compare/v5.8.0...v5.8.1) (2024-09-21)
+
+
+### Bug Fixes
+
+* **lsp:** update deprecated API calls ([#514](https://github.com/mrcjkb/rustaceanvim/issues/514)) ([9a36905](https://github.com/mrcjkb/rustaceanvim/commit/9a369055aebd0411a11600f7cfd5c9b39c751eaa))
+
 ## [5.8.0](https://github.com/mrcjkb/rustaceanvim/compare/5.7.0...v5.8.0) (2024-09-20)
 
 

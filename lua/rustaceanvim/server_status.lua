@@ -5,18 +5,37 @@ local M = {}
 ---@type { [integer]: boolean }
 local _ran_once = {}
 
+---@param health rustaceanvim.lsp_server_health_status
+---@return boolean
+local function is_notify_enabled_for(health)
+  if health and health == 'ok' then
+    return false
+  end
+  local notify_level = config.server.status_notify_level
+  if not notify_level then
+    return false
+  end
+  if notify_level == 'error' then
+    return health == 'error'
+  end
+  return true
+end
+
 ---@param result rustaceanvim.internal.RAInitializedStatus
+---@param ctx lsp.HandlerContext
 function M.handler(_, result, ctx, _)
   -- quiescent means the full set of results is ready.
   if not result or not result.quiescent then
     return
   end
   -- notify of LSP errors/warnings
-  if result.health and result.health ~= 'ok' then
+  if is_notify_enabled_for(result.health) then
     local message = ([[
 rust-analyzer health status is [%s]:
 %s
 Run ':RustLsp logFile' for details.
+To configure or disable rust-analyzer server status notifications,
+see ':h rustaceanvim.lsp.ClientOpts'.
 ]]):format(result.health, result.message or '[unknown error]')
     vim.notify(message, vim.log.levels.WARN)
   end
